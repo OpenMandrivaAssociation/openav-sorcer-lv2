@@ -18,6 +18,7 @@ BuildRequires:	pkgconfig(freetype2)
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(gtkmm-2.4)
+BuildRequires:	pkgconfig(lv2)
 Requires:	lv2
 
 %description
