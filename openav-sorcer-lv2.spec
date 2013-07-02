@@ -11,6 +11,7 @@ Url:		https://github.com/harryhaaren/openAV-Sorcer
 # from git
 Source0:	%{oname}-%{snapshot}.tar.bz2
 Patch0:		openAV-Sorcer-build.patch
+BuildRequires:	boost-devel
 BuildRequires:	pkgconfig(cairo)
 BuildRequires:	pkgconfig(fontconfig)
 BuildRequires:	pkgconfig(freetype2)
