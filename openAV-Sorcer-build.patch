@@ -1,0 +1,28 @@
+diff -urN openAV-Sorcer/compileInstall.sh openAV-Sorcer-patched/compileInstall.sh
+--- openAV-Sorcer/compileInstall.sh	2013-07-02 23:25:34.175245794 +1100
++++ openAV-Sorcer-patched/compileInstall.sh	2013-07-02 23:30:18.543876668 +1100
+@@ -25,7 +25,7 @@
+ 
+ 
+ echo -e "\e[34m:: \e[97mBuilding plugin..."
+-g++ -fPIC -shared -ffast-math -O3 -DPLUGIN_URI='"http://www.openavproductions.com/sorcer"'   main.cpp -o sorcer.so
++g++ -fPIC -shared -ffast-math $CFLAGS -DPLUGIN_URI='"http://www.openavproductions.com/sorcer"'   main.cpp -o sorcer.so
+ echo -e "\e[1A\e[73C \e[34m[\e[97mDONE\e[34m]"
+ 
+ 
+@@ -47,15 +47,4 @@
+ cd ..
+ echo -e "\e[1A\e[73C \e[34m[\e[97mDONE\e[34m]"
+ 
+-
+-if [ $(whoami) = root ]
+-then
+-  echo -e "\e[34m:: \e[97mCopying bundle to /usr/lib/lv2/sorcer.lv2"
+-  install -d /usr/lib/lv2/sorcer.lv2
+-  install -t /usr/lib/lv2/sorcer.lv2 ./sorcer.lv2/*
+-else
+-  echo -e "\e[34m:: \e[97mCopying bundle to $HOME/.lv2/sorcer.lv2"
+-  install -d $HOME/.lv2/sorcer.lv2
+-  install -t $HOME/.lv2/sorcer.lv2 ./sorcer.lv2/*
+-fi
+ echo -e "\e[1A\e[73C \e[34m[\e[97mDONE\e[34m] \e[97m"
